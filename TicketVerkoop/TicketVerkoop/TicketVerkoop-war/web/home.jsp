@@ -14,7 +14,7 @@
         <title>Home</title>
     </head>
     <body>
-        <h3>Welkom op onze nieuwe webpagina</h3>
+        <h3><i >Welkom op onze nieuwe webpagina</i></h3>
         <table class="hometab">
             <tr>
                 <td class="hometabel" onclick="location.href='login.jsp'">
@@ -31,8 +31,6 @@
                 </td>
             </tr>
         </table>
-        
-        </form>
     </body>
 </html>
 <%@ include file="footer.jsp" %>
