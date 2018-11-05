@@ -32,3 +32,11 @@ and open the template in the editor.
         width: 150px;
         margin-top: 10px;
 }
+.logout{
+ background-color:lightskyblue;
+ height:30px;
+ border-radius:8px;    
+}
+.logout:hover{
+    border-width: 0px;
+}

@@ -14,11 +14,11 @@
     <body>
         <div style="border-style:solid;background-color:lightgrey ;text-height:8px;margin-top:20%; text-indent: 20px ">
         <br> 
-        <p>email:sample@kuleuven.be</p>
+        <p>ticketterkoop@hoopenvlijt.be</p>
         <p>adres: Samplestraat 24 2424 Sample</p>
-        <p>tel.: 04.581624XX</p>
-        <form action="MyServlet.do" method="post">
-            <input type="submit" value="Meld Af" style="background-color:lightskyblue;height:30px;border-radius:8px; ">
+        <p>tel.: 03.581624XX</p>
+        <form action="Servlet.do" method="post">
+            <input type="submit" value="Meld Af"  class="logout">
         <input type="hidden" name="van" value="logout">
         <br><br>
         </form>   
