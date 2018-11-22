@@ -61,6 +61,7 @@ body{
     height:30px;
     font-weight:bold;
     border-radius:8px; 
+    cursor: pointer;
 }
 .logout:hover{
     border-width: 0px;
@@ -70,18 +71,49 @@ body{
 .footer{
     border-top-style:solid;
     border-top-left-radius:  20px;
-     border-top-right-radius:  20px;
+    border-top-right-radius:  20px;
     background-color:lightgoldenrodyellow;
     padding-top:20px;
-     padding-bottom:20px;
+    padding-bottom:20px;
     width:100%;
     margin-right: auto;
     bottom: 0;
-   overflow:hidden;
-   text-align:center;   
-   position:fixed;
-   margin-left: -8px;
+    overflow:hidden;
+    text-align:center;   
+    position:fixed;
+    margin-left: -8px;
 }
 
+.dataform{
+    margin-top: 20px;
+    width: 30%;
+    padding:5px 0px 10px 5px ;
+    border-left-width: 20px;
+    border-left-color: lightgoldenrodyellow;  
+    border-left-style: solid;
+    text-indent: 20px;
+    
+}
 
+.textfield{
+    float:right;
+    border-style:solid;
+    border-color:rgba(0,0,0,0);
+}
+
+.textfield:focus{
+    float:right;
+    border-style:solid;
+    border-color:#50BFE6;
+}
+
+.register{
+    font-size:30px;
+    border-radius: 10px;    
+}
+.register:hover{
+    font-size:30px;
+    background-color:darkgrey ;
+    cursor: pointer;    
+}
 

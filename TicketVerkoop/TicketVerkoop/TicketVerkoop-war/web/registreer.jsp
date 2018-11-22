@@ -14,27 +14,27 @@
         <link rel="stylesheet" type="text/css" href="css.css">
     </head>
     <body>
-        <div id="register" class="animate form">
+        <div id="register" class="dataform">
 			<form  action="mysuperscript.php"> 
 			<h1> Registreer </h1> 
 			<p> 
 				<label for="naam" class="name">Naam en voornaam:</label>
-				<input id="naam" name="naam" required="required" type="text" placeholder="Jef Janssens" />
+				<input class="textfield" style="width:200px" id="naam" name="naam" required="required" type="text" placeholder="Jef Janssens" />
 			</p>
 			<p> 
 				<label for="email" class="email">E-mail adress:</label>
-				<input id="email" name="email" required="required" type="email" placeholder="JefJannsens@gmail.com"/> 
+				<input class="textfield" style="width:200px" id="email" name="email" required="required" type="email" placeholder="JefJannsens@gmail.com"/> 
 			</p>
 			<p> 
 				<label for="password" class="passwd">Passwoord:</label>
-				<input id="password" name="password" required="required" type="password" placeholder="bvb: X8df!90EO"/>
+				<input class="textfield" id="password" name="password" required="required" type="password" placeholder="bvb: X8df!90EO"/>
 			</p>
 			<p> 
-                    	<label for="password_confirm" class="passwd">Geef uw passwoord opnieuw op:</label>
-				<input id="password_confirm" name="password_confirm" required="required" type="password" placeholder="bvb: X8df!90EO"/>
+                                                                                        <label for="password_confirm" class="passwd">Geef uw passwoord opnieuw op:</label>
+				<input class="textfield" id="password_confirm" name="password_confirm" required="required" type="password" placeholder="bvb: X8df!90EO"/>
 			</p>
-			<p class="register button"> 
-				<input type="submit" value="Registreer"/> 
+                                                                  <p>  
+				<input class="register"  type="submit" value="Registreer"/> 
 			</p>
 		</form>
 	</div>
