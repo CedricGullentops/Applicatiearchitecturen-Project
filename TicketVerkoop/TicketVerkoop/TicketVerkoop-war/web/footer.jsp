@@ -12,22 +12,15 @@
         <title>footer</title>
     </head>
     <body>
-        <div class="footer  ">
-        <table style="width:100%">
-            <tr>
-                <td> ticketterkoop@hoopenvlijt.be</td>       
-                <td>adres: Samplestraat 24 2424 Sample<t/d>
-                <td>tel.: 03.581624XX</td>
-            </tr>
-            <tr>
-                <td>
-        <form action="Servlet.do" method="post">
-            <input type="submit" value="Meld Af"  class="logout">
-            <input type="hidden" name="van" value="logout">
+        <div class="footer "> 
+                ticketterkoop@hoopenvlijt.be       
+                adres: Samplestraat 24 2424 Sample
+                tel.: 03.581624XX
+  
+            <form action="Servlet.do" method="post">
+                <input type="submit" value="Meld Af"  class="logout">
+                <input type="hidden" name="van" value="logout">
             </form>   
-            </td>
-        </tr>
-        <br><br>
         
        </div>
     </body>

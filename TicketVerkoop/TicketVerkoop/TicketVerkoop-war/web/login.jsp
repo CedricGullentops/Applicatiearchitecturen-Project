@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Pagina</title>
+        <link rel="stylesheet" type="text/css" href="css.css">
     </head>
     <body>
         <div id="login" class="animate form">
@@ -38,6 +39,8 @@
 			</p>
 		</form>
 	</div>
+        
+      
     </body>
+    <%@ include file="footer.jsp" %>            
 </html>
-<%@ include file="footer.jsp" %>

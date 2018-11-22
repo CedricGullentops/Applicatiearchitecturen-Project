@@ -8,7 +8,18 @@ and open the template in the editor.
     Author     : Jarrit
 */
 
+body{
+    background-image:url(bg.png) ;
+    background-size: cover;
+}
+
 .hometab{
+    width:100%;
+    text-align:center;
+    border-spacing: 20px;      
+    table-layout: fixed;
+}
+.showtab{
     width:100%;
     text-align:center;
     border-spacing: 20px;      
@@ -27,30 +38,50 @@ and open the template in the editor.
         color: whitesmoke;
         cursor: pointer;
 }
+.showtabel{
+    background-color:lightgoldenrodyellow;
+    border-radius: 5px;
+    height: 80px;
+    font-family:Georgia, serif; 
+    font-size: 35px;
+    font-weight: bold;
+}
+.showtabel:hover{
+        background-color:lightpink;
+        color: whitesmoke;
+        cursor: pointer;
+}
 .im{
         height:150px;
         width: 150px;
         margin-top: 10px;
 }
 .logout{
- background-color:lightskyblue;
- height:30px;
- border-radius:8px;    
+    background-color:lightskyblue;
+    height:30px;
+    font-weight:bold;
+    border-radius:8px; 
 }
 .logout:hover{
     border-width: 0px;
+     background-color:salmon;
 }
-<<<<<<< HEAD
+
 .footer{
-    border-style:none;
+    border-top-style:solid;
+    border-top-left-radius:  20px;
+     border-top-right-radius:  20px;
     background-color:lightgoldenrodyellow;
-    border-radius:5px;
-    margin-top:20%;
-    text-indent: 20px ;
+    padding-top:20px;
+     padding-bottom:20px;
+    width:100%;
+    margin-right: auto;
+    bottom: 0;
+   overflow:hidden;
+   text-align:center;   
+   position:fixed;
+   margin-left: -8px;
 }
-.footdiv{
-    position:fixed;
-    margin-top: -5%;    
-}
-=======
->>>>>>> 9dff481175ac1b46501b784025be32adddfaacd1
+
+
+

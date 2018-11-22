@@ -13,31 +13,27 @@
         <link rel="stylesheet" type="text/css" href="css.css">
         <title>Home</title>
     </head>
-    <body style='background-image:url(bg.png) ;background-size: cover' >
+    <body >
         <h3><i >Welkom op onze nieuwe webpagina</i></h3>
-        <form id="home" do="POST"  onsubmit="Servlet.do">
         <table class="hometab">
             <tr>
-                <td class="hometabel" onclick="location.href='login.jsp'">
+                <td class="hometabel" onclick="location.href='Servlet.do?naar=login'">
                     <u>Aanmelden</u><br>
                     <img class="im" src="login.png">
                 </td>
-                <td class="hometabel" onclick="location.href='verkoop.jsp'">
+                <td class="hometabel" onclick="location.href='Servlet.do?naar=verkoop'">
                      <u>Verkoop</u><br>
                      <img class="im" src="tickets.png">
                 </td>
-                <td class="hometabel" onclick="location.href='registreer.jsp'">
+                <td class="hometabel" onclick="location.href='Servlet.do?naar=registreer'">
                      <u>Registreren</u><br>
                      <img class="im" src="regis.png">
                 </td>
             </tr>
         </table>
-            <input type="hidden" name="van">
-        </form>
-        <div class="footdiv">
-            
-            <%@ include file="footer.jsp" %>
-            
-        </div>
-    </body>
+        
+        
+    </body>          
+    <%@ include file="footer.jsp" %>            
+   
 </html>

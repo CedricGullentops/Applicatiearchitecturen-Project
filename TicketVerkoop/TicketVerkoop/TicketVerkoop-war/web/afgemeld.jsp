@@ -10,8 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Afgemeld</title>
+        <link rel="stylesheet" type="text/css" href="css.css">
     </head>
     <body>
         <h1>U bent afgemeld! Tot de volgende keer!</h1>
+        
+        
+      
     </body>
+    <%@ include file="footer.jsp" %>            
 </html>
