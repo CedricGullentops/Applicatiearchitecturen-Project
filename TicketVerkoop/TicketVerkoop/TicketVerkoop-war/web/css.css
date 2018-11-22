@@ -40,6 +40,7 @@ and open the template in the editor.
 .logout:hover{
     border-width: 0px;
 }
+<<<<<<< HEAD
 .footer{
     border-style:none;
     background-color:lightgoldenrodyellow;
@@ -49,7 +50,7 @@ and open the template in the editor.
 }
 .footdiv{
     position:fixed;
-    margin-top: -5%;
-    
-    
+    margin-top: -5%;    
 }
+=======
+>>>>>>> 9dff481175ac1b46501b784025be32adddfaacd1
