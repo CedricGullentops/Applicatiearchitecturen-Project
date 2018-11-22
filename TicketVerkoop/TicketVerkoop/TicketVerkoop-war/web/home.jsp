@@ -13,8 +13,9 @@
         <link rel="stylesheet" type="text/css" href="css.css">
         <title>Home</title>
     </head>
-    <body>
+    <body style='background-image:url(bg.png) ;background-size: cover' >
         <h3><i >Welkom op onze nieuwe webpagina</i></h3>
+        <form id="home" do="POST"  onsubmit="Servlet.do">
         <table class="hometab">
             <tr>
                 <td class="hometabel" onclick="location.href='login.jsp'">
@@ -31,6 +32,12 @@
                 </td>
             </tr>
         </table>
+            <input type="hidden" name="van">
+        </form>
+        <div class="footdiv">
+            
+            <%@ include file="footer.jsp" %>
+            
+        </div>
     </body>
 </html>
-<%@ include file="footer.jsp" %>

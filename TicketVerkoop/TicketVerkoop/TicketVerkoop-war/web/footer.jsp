@@ -12,16 +12,23 @@
         <title>footer</title>
     </head>
     <body>
-        <div style="border-style:solid;background-color:lightgrey ;text-height:8px;margin-top:20%; text-indent: 20px ">
-        <br> 
-        <p>ticketterkoop@hoopenvlijt.be</p>
-        <p>adres: Samplestraat 24 2424 Sample</p>
-        <p>tel.: 03.581624XX</p>
+        <div class="footer  ">
+        <table style="width:100%">
+            <tr>
+                <td> ticketterkoop@hoopenvlijt.be</td>       
+                <td>adres: Samplestraat 24 2424 Sample<t/d>
+                <td>tel.: 03.581624XX</td>
+            </tr>
+            <tr>
+                <td>
         <form action="Servlet.do" method="post">
             <input type="submit" value="Meld Af"  class="logout">
-        <input type="hidden" name="van" value="logout">
+            <input type="hidden" name="van" value="logout">
+            </form>   
+            </td>
+        </tr>
         <br><br>
-        </form>   
+        
        </div>
     </body>
 </html>
