@@ -35,7 +35,7 @@
     <body>      
         <h1 >Voorstelling</h1>
         <a href="#plaatsen">Kies mijn plaatsen</a>
-        <form action="<c:url value='MyServlet.do'/>" method="post">
+        <form action="<c:url value='Servlet.do'/>" method="post">
         <div  id="plaatsen" class="plaatsdiv" unselectable="on" onselectstart="return false" onmousedown="return false">            
             <table>
                 <tr style="left:0"> 
@@ -65,7 +65,7 @@
             <p id="lijst"></p>
             <h3  id="tot"></h3>
             <input class="submit" type="image" src="order.png" alt="submit">
-            
+            <input type="hidden" name="naar" value="overzicht">
           </div>
           </form>
           <a href="">Naar boven</a>

@@ -198,4 +198,36 @@ body{
     content: url(selected.png);     
 }
 
- 
+.trash{
+    width:15px;
+    height:20px;    
+    right:0;
+    bottom:0;
+    content:url(trash.png);
+}
+.trash:hover{
+    width:15px;
+    height:24px;    
+    cursor:pointer;
+    content:url(trashsel.png);
+}
+.overtab td{
+    height:30px;
+    text-align: center;
+}
+.overtab th{
+    padding: 0 60px 0 60px;
+    font-size: 20px;
+}
+.bestel{
+    float:right;
+}
+.overdiv{
+    margin: 20px 0 200px 0;
+    padding:5px 0px 10px 5px ;
+    border-left-width: 20px;
+    border-left-color: lightgoldenrodyellow;  
+    border-left-style: solid;
+    text-indent: 20px;
+    width:50%;
+}

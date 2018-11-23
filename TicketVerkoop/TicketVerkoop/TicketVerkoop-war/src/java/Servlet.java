@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -23,6 +24,7 @@ public class Servlet extends HttpServlet {
     HttpSession sessie;
     String van,naar;
     int actiecode;
+    String[ ] plaatsen;
     
     public void init() throws ServletException {
     }
@@ -55,27 +57,16 @@ public class Servlet extends HttpServlet {
         @Override
     protected void doPost (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            van = request.getParameter("van");
+            naar = request.getParameter("naar");
             sessie = request.getSession(true);
             response.setContentType("text/html;charset=UTF-8");
             
-        switch (van) {
-            case "index":
-                sessie.setAttribute("nr",Integer.parseInt(request.getParameter("nr")));
-                gotoPage("reserveer.jsp",request,response);
-                break;
-            case "home":
-                gotoPage("reserveer.jsp",request,response); 
-                break;
-            case "reserveer":
-                gotoPage("overzicht.jsp",request,response);
-                break;
-            case "logout":
-                sessie.invalidate();
-                gotoPage("afgemeld.jsp",request,response);
-                break;
+        switch (naar) {
+            
             case "overzicht":
-                gotoPage("reserveer.jsp",request,response);
+                plaatsen = request.getParameterValues("plaatsid");
+                request.setAttribute("plaatsen", plaatsen);
+                gotoPage("overzicht.jsp",request,response);
                 break;
             default:
                 break;
