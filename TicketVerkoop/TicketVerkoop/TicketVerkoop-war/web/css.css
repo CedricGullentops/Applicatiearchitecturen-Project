@@ -124,7 +124,7 @@ body{
    border-radius: 10px;
    border-style:solid;
    padding:30px;
-   margin: 30px 0 200px 30px;
+   margin: 30px 30px 200px 30px;
    background-color: #FFF3FF;
 }
 
@@ -133,6 +133,37 @@ body{
     width: 60px;
     text-align: center;
     text-indent: -18px;
+    cursor: default;
+}
+
+.overview{
+   text-align:left;   
+   float:left;
+   border-radius: 10px;
+   border-style:solid;
+   padding:0 30px 0 30px;
+   margin: 30px 30px 200px 0px;
+   background-color: #EEC1EE;
+   width:250px;
+}
+
+.overview h1{
+    text-decoration: underline; 
+    text-align: center;
+}
+.overview .submit{
+    margin: 0 30px  30px 190px;
+    font-size: 40px;
+    border-style:solid;
+    border-radius:5px;
+    background-color:white; 
+    height:60px;
+    
+}
+.overview .submit:hover{
+    font-size: 40px;
+    background-color:lightgray; 
+    cursor:pointer;
 }
 
 
