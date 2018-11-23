@@ -13,7 +13,7 @@
     </head>
     <body>
         <div class="footer "> 
-                ticketterkoop@hoopenvlijt.be       
+                ticketverkoop@hoopenvlijt.be       
                 adres: Samplestraat 24 2424 Sample
                 tel.: 03.581624XX
   

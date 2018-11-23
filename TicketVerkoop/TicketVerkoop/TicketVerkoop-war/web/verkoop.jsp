@@ -23,7 +23,7 @@
                         <h2> ${show} </h2> 
                       </td>
                 </c:forEach> !-->
-                <td class="showtabel" onclick="location.href='Servlet.do?voorstelling=show1'"><h2>Show 1</h2></td>
+                <td class="showtabel" onclick="location.href='Servlet.do?naar=voorstelling&voorstelling=show1'"><h2>Show 1</h2></td>
              </tr>         
           </table>
         

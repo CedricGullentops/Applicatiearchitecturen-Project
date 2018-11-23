@@ -44,6 +44,9 @@ public class Servlet extends HttpServlet {
            case "registreer":
                 gotoPage("registreer.jsp",request,response);
                 break;
+           case "voorstelling":
+                gotoPage("voorstelling.jsp",request,response);
+                break;
            default:
                 break;
         }
