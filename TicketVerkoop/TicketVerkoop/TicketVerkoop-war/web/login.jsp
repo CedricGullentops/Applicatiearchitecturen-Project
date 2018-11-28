@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="login" class="animate form">
-		<form  action="mysuperscript.php"> 
+		<form action="Servlet.do" method="post">
 			<h1>Log in</h1> 
 			<p> 
 				<label for="email" class="email">E-mail adress:</label>
@@ -31,11 +31,15 @@
 				<label for="blogin">Houd me ingelogd!</label>
 			</p>
 			<p class="login button"> 
-				<input type="submit" value="Login" /> 
+				<input type="submit" value="Login" />
+                                <input type="hidden" name="naar" value="verkoop">
 			</p>
+                </form>
+                <form action="Servlet.do" method="post">
 			<p class="change_link">
 				Nog niet geregistreerd?
 				<a href="#register" class="to_register">Registreer hier!</a>
+                                <input type="hidden" name="naar" value="registreer">
 			</p>
 		</form>
 	</div>

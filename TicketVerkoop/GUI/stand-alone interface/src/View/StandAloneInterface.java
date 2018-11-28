@@ -30,7 +30,7 @@ public class StandAloneInterface extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jXDatePicker2 = new org.jdesktop.swingx.JXDatePicker();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(200, 0), new java.awt.Dimension(250, 0), new java.awt.Dimension(200, 32767));
@@ -41,11 +41,12 @@ public class StandAloneInterface extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Stand-Alone Interface");
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.gray, java.awt.Color.darkGray));
-        jPanel1.setMinimumSize(new java.awt.Dimension(400, 30));
-        jPanel1.setPreferredSize(new java.awt.Dimension(701, 40));
+        jPanel1.setMinimumSize(new java.awt.Dimension(400, 50));
+        jPanel1.setPreferredSize(new java.awt.Dimension(701, 50));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setText("Kies een datum:   ");
@@ -53,13 +54,12 @@ public class StandAloneInterface extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 5;
         jPanel1.add(jLabel1, gridBagConstraints);
 
-        jXDatePicker2.setMaximumSize(new java.awt.Dimension(150, 25));
-        jXDatePicker2.setMinimumSize(new java.awt.Dimension(150, 25));
-        jXDatePicker2.setPreferredSize(new java.awt.Dimension(150, 30));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        jPanel1.add(jXDatePicker2, gridBagConstraints);
+        jXDatePicker1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jXDatePicker1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jXDatePicker1, new java.awt.GridBagConstraints());
 
         jLabel2.setText("Zoek een naam:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -104,7 +104,6 @@ public class StandAloneInterface extends javax.swing.JFrame {
         getContentPane().add(jPanel1, gridBagConstraints);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.gray, java.awt.Color.lightGray));
-        jPanel2.setMinimumSize(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -139,6 +138,10 @@ public class StandAloneInterface extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jXDatePicker1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jXDatePicker1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jXDatePicker1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +188,6 @@ public class StandAloneInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     // End of variables declaration//GEN-END:variables
 }

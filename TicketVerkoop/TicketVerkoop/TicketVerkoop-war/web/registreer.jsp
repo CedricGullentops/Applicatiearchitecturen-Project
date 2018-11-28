@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="register" class="dataform">
-			<form  action="mysuperscript.php"> 
+			<form action="Servlet.do" method="post">
 			<h1> Registreer </h1> 
 			<p> 
 				<label for="naam" class="name">Naam en voornaam:</label>
@@ -30,11 +30,12 @@
 				<input class="textfield" id="password" name="password" required="required" type="password" placeholder="bvb: X8df!90EO"/>
 			</p>
 			<p> 
-                                                                                        <label for="password_confirm" class="passwd">Geef uw passwoord opnieuw op:</label>
+                                <label for="password_confirm" class="passwd">Geef uw passwoord opnieuw op:</label>
 				<input class="textfield" id="password_confirm" name="password_confirm" required="required" type="password" placeholder="bvb: X8df!90EO"/>
 			</p>
                                                                   <p>  
 				<input class="register"  type="submit" value="Registreer"/> 
+                                <input type="hidden" name="naar" value="verkoop">
 			</p>
 		</form>
 	</div>

@@ -47,8 +47,14 @@ public class Servlet extends HttpServlet {
                 gotoPage("registreer.jsp",request,response);
                 break;
            case "voorstelling":
-                gotoPage("voorstelling.jsp",request,response);
+               if(request.isUserInRole("Beheerders")){
+                   gotoPage("voorstelling_beheerders.jsp",request,response);
                 break;
+               }  
+               else{
+                   gotoPage("voorstelling.jsp",request,response);
+                   break;
+               }
            default:
                 break;
         }
