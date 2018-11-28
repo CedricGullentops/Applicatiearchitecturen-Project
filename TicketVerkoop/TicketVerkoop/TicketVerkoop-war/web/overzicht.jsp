@@ -13,8 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Winkelmandje</title>
-        <link rel="stylesheet" type="text/css" href="css.css">
-        
+        <link rel="stylesheet" type="text/css" href="css.css">        
 
         <script>
             function writeStart()
@@ -36,7 +35,7 @@
                {
                    alert("Uw mandje is leeg :(");
                }
-               document.getElementById("sub").;
+               document.getElementById("sub");
             }
         </script>
         <script>
