@@ -24,7 +24,8 @@
                 {
                     text +=  `<input type="hidden" name="besteld" value="`+ lijst[i].value+`">`; 
                 }
-                document.getElementById("hidden").innerHTML = text;                
+                document.getElementById("hidden").innerHTML = text;  
+                calcPrijs();
             }
         </script>
         <script>
@@ -33,9 +34,11 @@
                 var lijst = document.getElementsByName("besteld"); 
                if(lijst.length === 0)
                {
-                   alert("Uw mandje is leeg :(");
+                   alert("Uw mandje is leeg,\nU wordt teruggebracht naar de selectiepagina");
+                    window.location = 'Servlet.do?naar=voorstelling&voorstelling=show1';
                }
                document.getElementById("sub");
+              
             }
         </script>
         <script>
@@ -53,6 +56,19 @@
                 document.getElementById("hidden").innerHTML = text;        
                 document.getElementById('P'+id).innerHTML ="";
                 testEmpty();
+                calcPrijs();
+            }
+        </script>
+             <script>
+            function calcPrijs ()
+            {
+                var lijst = document.getElementsByName("besteld");
+                var prijs = 0;
+                for(i=0;i<lijst.length;i++)
+                {
+                    prijs += 15;
+                }       
+                document.getElementById("totprijs").innerHTML = "Subtotaal: " + prijs;
             }
         </script>
         
@@ -78,6 +94,7 @@
                 </tr>
             </c:forEach>
             </table>
+            <h3 id="totprijs"></h3>
             <div id="hidden"></div>
             <input class="bestel" id="sub" type="submit" value="Bestel">
             <input type="hidden" name="naar" value="overzicht">

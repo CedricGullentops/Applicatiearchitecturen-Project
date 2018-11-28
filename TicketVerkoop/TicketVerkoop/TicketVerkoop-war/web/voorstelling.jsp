@@ -14,25 +14,43 @@
         <title>Plaatsen</title>
         <link rel="stylesheet" type="text/css" href="css.css">
         <script>
-            function printOrder() {
+            function printOrder() 
+            {
                 var text="";
                 var aant=0;
-                var aa= document.getElementsByName("plaatsid");
-                for (var i =0; i < aa.length; i++){
-                    if(aa[i].checked){
+                var plaatsen= document.getElementsByName("plaatsid");
+                for (var i =0; i < plaatsen.length; i++){
+                    if(plaatsen[i].checked){
                         aant++;
-                        text += "Plaats nr. : " + aa[i].value + "<br>"; 
-                         
+                        text += "Plaats nr. : " + plaatsen[i].value + "<br>";                          
                     }                          
                 }                    
                 document.getElementById("lijst").innerHTML = text;
                 var prijs = "Totaalprijs: " + aant * 15 + " Euro" ;    
                 document.getElementById("tot").innerHTML = prijs;
+                if( aant === 0)
+                {
+                    document.getElementById("sub").disabled = true;
+                }
+                else
+                 {
+                    document.getElementById("sub").disabled = false;
+                }
+            }       
+        </script>
+         <script>
+            function unSel() 
+            {
+                plaatsen = document.getElementsByName("plaatsid");
+                for (var i =0; i < plaatsen.length; i++){
+                        plaatsen[i].checked   =  false;                   
+                 }         
+                 printOrder();
             }       
         </script>
         
     </head>
-    <body>      
+    <body onload="printOrder()">      
         <h1 >Voorstelling</h1>
         <a href="#plaatsen">Kies mijn plaatsen</a>
         <form action="<c:url value='Servlet.do'/>" method="post">
@@ -49,7 +67,7 @@
                     <tr> 
                         <th><% out.println(i); %></th>
                         <% for(int j = 1; j <=15 ; j+=1) { %>
-                        <td>
+                        <td class="tel">
                             <label class="container">
                                 <input id ="check" type="checkbox" name=plaatsid onclick="printOrder()"  value=<% out.println(n); %>>
                                 <span class="checkmark"></span>
@@ -64,7 +82,8 @@
             <h1>Overzicht</h1>            
             <p id="lijst"></p>
             <h3  id="tot"></h3>
-            <input class="submit" type="image" src="order.png" alt="submit">
+            <img src="clear.png" class="clear" type="button" onclick="unSel()">
+            <input class="submit" id="sub" type="image" src="order.png" alt="submit">
             <input type="hidden" name="naar" value="overzicht">
           </div>
           </form>
