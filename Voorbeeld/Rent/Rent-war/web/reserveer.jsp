@@ -4,6 +4,7 @@
     Author     : student
 --%>
 
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
@@ -36,43 +37,19 @@
             
           <tr>
           <td><select name="vanloc">
-              <!--    
-              <%
-                ArrayList<String> locaties = (ArrayList<String>)application.getAttribute("locaties");
-                for(int i = 0;i < locaties.size();i++){
-                    String x = locaties.get(i);
-                    out.print("'<option value='" + x +"'>" +x+ "</option>");
-                }
-              %>
-              -->
+
                 <c:forEach var="locatie" items="${locaties}" >
                     <option value="${locatie}"> ${locatie} </option> 
                 </c:forEach>
           </select></td>
           <td><select name="wagen">
-              <!--    
-              <%
-                ArrayList<String> wagens = (ArrayList<String>)application.getAttribute("wagens");
-                for(int i = 0;i < wagens.size();i++){
-                    String x = wagens.get(i);
-                    out.print("'<option value='" + x +"'>" +x+ "</option>");
-                }
-              %>
-              -->
+
                 <c:forEach var="wagen" items="${wagens}" >
                     <option value="${wagen}"> ${wagen} </option> 
                 </c:forEach>
           </select></td>
            <td><select name="naarloc">
-              <!--
-              <%
-                
-                for(int i = 0;i < locaties.size();i++){
-                    String x = locaties.get(i);
-                    out.print("'<option value='" + x +"'>" +x+ "</option>");
-                }
-              %>
-              -->
+
             <c:forEach var="locatie" items="${locaties}" >
                 <option value="${locatie}"> ${locatie} </option> 
             </c:forEach>

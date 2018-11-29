@@ -4,13 +4,17 @@
         <servlet-name>Servlet</servlet-name>
         <servlet-class>Pack.Servlet</servlet-class>
         <init-param>
-            <param-name>actieCode</param-name>
+            <param-name>korting</param-name>
             <param-value>20</param-value>
         </init-param>
     </servlet>
     <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>Pack.MyServlet</servlet-class>
+        <init-param>
+            <param-name>korting</param-name>
+            <param-value>15</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>

@@ -11,13 +11,8 @@ import javax.ejb.Stateful;
 @Stateful
 public class BoonFull implements BoonFullRemote {
 
-    private int totprijs ;
+    private int totprijs;
     private int totaant;
-    
-    public void initPrijs(){
-        totprijs = 0;
-        totaant = 0;
-    }
     
     public void addTot(int prijs){
         totaant++;

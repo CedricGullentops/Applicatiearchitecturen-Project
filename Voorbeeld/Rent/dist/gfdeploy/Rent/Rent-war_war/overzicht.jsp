@@ -23,7 +23,7 @@
             Prijs:
             <%                
                 int p = (Integer)request.getAttribute("prijs"); 
-                out.print(p + " euro");
+                out.print(p + " euro.<br>");
                 int t = (Integer)request.getAttribute("tprijs");
                 int a = (Integer)request.getAttribute("taant"); 
                 out.print(a +" laatste reservaties:"+ t + " euro");

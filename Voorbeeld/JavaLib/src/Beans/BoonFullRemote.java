@@ -20,6 +20,4 @@ public interface BoonFullRemote {
 
     public int getTotaant();
     
-    public void initPrijs();
-    
 }
