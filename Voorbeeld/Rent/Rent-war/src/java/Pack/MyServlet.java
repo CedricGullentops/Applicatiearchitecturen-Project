@@ -5,7 +5,7 @@
  */
 package Pack;
 
-import Beans.*;
+import Beans.DataBeanRemote;
 import Java.Locaties;
 import Java.Wagens;
 import java.io.IOException;

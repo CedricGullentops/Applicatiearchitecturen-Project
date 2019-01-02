@@ -1,3 +1,5 @@
+package pack;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -21,12 +23,18 @@ import javax.servlet.http.HttpSession;
  * @author student
  */
 public class Servlet extends HttpServlet {
+                
     HttpSession sessie;
     String van,naar;
     int actiecode;
     String[ ] plaatsen;
+    //@EJB private DaBeanLocal db;
     
+    @Override
     public void init() throws ServletException {
+        //List S = db.getShows();
+        //getServletContext().setAttribute("Shows",S);
+        
     }
     
     @Override
@@ -85,7 +93,6 @@ public class Servlet extends HttpServlet {
                 view.forward(request, response);   
         
         }
-    
-    }
+ }
 
  
