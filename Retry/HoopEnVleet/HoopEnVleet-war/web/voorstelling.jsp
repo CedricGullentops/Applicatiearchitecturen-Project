@@ -33,10 +33,12 @@
                 if( aant === 0)
                 {
                     document.getElementById("sub").disabled = true;
+                    document.getElementById("clr").disabled = true;
                 }
                 else
                  {
                     document.getElementById("sub").disabled = false;
+                    document.getElementById("clr").disabled = false;
                 }
             }       
         </script>
@@ -98,7 +100,7 @@
             <h1>Overzicht</h1>            
             <p id="lijst"></p>
             <h3  id="tot"></h3>
-            <img src="clear.png" class="clear" type="button" onclick="unSel()">
+            <img src="clear.png" id="clr" class="clear" type="button" onclick="unSel()">
             <input class="submit" id="sub" type="image" src="order.png" alt="submit">
             <input type="hidden" name="naar" value="overzicht">
           </div>

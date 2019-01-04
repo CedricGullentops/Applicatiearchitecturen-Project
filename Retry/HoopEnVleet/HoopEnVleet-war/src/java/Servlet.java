@@ -100,6 +100,13 @@ public class Servlet extends HttpServlet {
                 request.setAttribute("codes", rcodes);
                 gotoPage("ticketoverzicht.jsp",request,response);
                 break;
+            case "verkoop":
+                String email = request.getParameter("email");
+                String naam = request.getParameter("naam");
+                String pwd = request.getParameter("password");
+                db.addKlant(email,naam,pwd);
+                gotoPage("verkoop.jsp",request,response);
+                break;   
                 
             default:
                 break;

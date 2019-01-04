@@ -25,5 +25,7 @@ public interface DataBeanLocal {
     public List getOpenSeats(int showid);
 
     public BigDecimal addReservatie(String email, BigDecimal pid, int sid);
+
+    public void addKlant(String email, String naam, String pwd);
     
 }

@@ -36,7 +36,7 @@ public List getShowNames(){
         Query query = em.createNamedQuery("Shows.findByShowid");
         query.setParameter("showid", new BigDecimal(id));
         Shows S = (Shows) query.getSingleResult();
-        query = em.createNamedQuery("Plaatsen.findByShowid");
+        query = em.createNamedQuery("Plaatsen.findFreeByShowid");
         query.setParameter("showid", (Shows) S);
         return query.getResultList(); 
     }
@@ -47,17 +47,18 @@ public List getShowNames(){
         BigDecimal x = (BigDecimal)query.getSingleResult();        
         return x.intValueExact();
     }
-/*    
+ 
 
     
-    public int addKlant(int postcode, String naam, String adres, String gemeente){
-        BigDecimal kn = (BigDecimal)em.createNamedQuery("Klanten.laatste").getSingleResult();
-        int knr = kn.intValueExact() + 1;
-        Klanten klant = new Klanten(knr,postcode, naam, adres, gemeente);
+@Override
+    public void addKlant(String email, String naam, String paswoord){
+        Klanten klant = new Klanten();
+        klant.setEmail(email);
+        klant.setNaam(naam);
+        klant.setPaswoord(paswoord);
         em.persist(klant);
-        return knr;
     }
-    
+/*       
     public boolean getKlant(int klantnr)
     {
         BigDecimal knr = new BigDecimal(klantnr);
@@ -87,12 +88,14 @@ public List getShowNames(){
         Klanten K = (Klanten) query.getSingleResult();
         Reservaties reservatie = new Reservaties();
         List results = em.createNamedQuery("Reservaties.LaatsteReservatie").getResultList();
-        if(results.isEmpty()){
+        if(results.get(0) == null){
             rcode =  new BigDecimal(0);
         }
-        BigDecimal res = (BigDecimal) results.get(0);
-        rcode = new BigDecimal(res.intValueExact() + 1);
-        
+        else{
+            rcode = (BigDecimal) results.get(0); 
+        }
+
+        rcode = new BigDecimal(rcode.intValueExact() + 1);        
         reservatie.setCode(rcode);
         reservatie.setLocked('0');
         reservatie.setEmail(K);
@@ -102,7 +105,7 @@ public List getShowNames(){
         em.persist(reservatie);
         query = em.createNamedQuery("Plaatsen.removePlaats");
         query.setParameter("plaatsid", pid);
-        query.getSingleResult();
+        query.executeUpdate();
         return rcode;
     }
     

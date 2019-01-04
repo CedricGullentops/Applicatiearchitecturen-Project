@@ -29,8 +29,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Reservaties.findAll", query = "SELECT r FROM Reservaties r")
     , @NamedQuery(name = "Reservaties.findByCode", query = "SELECT r FROM Reservaties r WHERE r.code = :code")
-    , @NamedQuery(name = "Reservaties.LaatsteReservatie", query = "SELECT max(r.code) FROM Reservaties r ")
-    , @NamedQuery(name = "Reservaties.findByLocked", query = "SELECT r FROM Reservaties r WHERE r.locked = :locked")})
+    , @NamedQuery(name = "Reservaties.findByLocked", query = "SELECT r FROM Reservaties r WHERE r.locked = :locked")
+    , @NamedQuery(name = "Reservaties.LaatsteReservatie", query = "SELECT max(r.code) FROM Reservaties r ")})
 public class Reservaties implements Serializable {
 
     private static final long serialVersionUID = 1L;

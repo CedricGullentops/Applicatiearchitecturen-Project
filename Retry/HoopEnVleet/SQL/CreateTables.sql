@@ -30,6 +30,7 @@ create table Plaatsen(
     prijs           integer,
     rij               integer,
     kolom       integer,
+    vrij            char,
     showid     integer references Shows
 );
 

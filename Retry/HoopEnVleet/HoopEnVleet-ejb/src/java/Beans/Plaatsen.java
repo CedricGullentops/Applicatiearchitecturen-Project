@@ -36,8 +36,11 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Plaatsen.findByPrijs", query = "SELECT p FROM Plaatsen p WHERE p.prijs = :prijs")
     , @NamedQuery(name = "Plaatsen.findByRij", query = "SELECT p FROM Plaatsen p WHERE p.rij = :rij")
     , @NamedQuery(name = "Plaatsen.findByKolom", query = "SELECT p FROM Plaatsen p WHERE p.kolom = :kolom")
-    , @NamedQuery(name = "Plaatsen.removePlaats", query = "DELETE FROM Plaatsen p WHERE p.plaatsid = :plaatsid")
-    ,@NamedQuery(name = "Plaatsen.findByShowid", query = "SELECT p.plaatsid FROM Plaatsen p WHERE p.showid = :showid order by p.plaatsid" )})
+    , @NamedQuery(name = "Plaatsen.findByVrij", query = "SELECT p FROM Plaatsen p WHERE p.vrij = :vrij")
+    , @NamedQuery(name = "Plaatsen.findByKolom", query = "SELECT p FROM Plaatsen p WHERE p.kolom = :kolom")
+    , @NamedQuery(name = "Plaatsen.removePlaats", query = "Update Plaatsen p SET p.vrij = '0' WHERE p.plaatsid = :plaatsid")
+    , @NamedQuery(name = "Plaatsen.freePlaats", query = "Update Plaatsen p SET p.vrij = '1' WHERE p.plaatsid = :plaatsid")
+    ,@NamedQuery(name = "Plaatsen.findFreeByShowid", query = "SELECT p.plaatsid FROM Plaatsen p WHERE p.showid = :showid AND p.vrij = '1' order by p.plaatsid" )})
 public class Plaatsen implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -53,6 +56,8 @@ public class Plaatsen implements Serializable {
     private BigInteger rij;
     @Column(name = "KOLOM")
     private BigInteger kolom;
+    @Column(name = "VRIJ")
+    private Character vrij;
     @OneToMany(mappedBy = "plaatsid")
     private Collection<Reservaties> reservatiesCollection;
     @JoinColumn(name = "SHOWID", referencedColumnName = "SHOWID")
@@ -96,6 +101,14 @@ public class Plaatsen implements Serializable {
 
     public void setKolom(BigInteger kolom) {
         this.kolom = kolom;
+    }
+
+    public Character getVrij() {
+        return vrij;
+    }
+
+    public void setVrij(Character vrij) {
+        this.vrij = vrij;
     }
 
     @XmlTransient

@@ -180,6 +180,10 @@ body{
     height:60px;
     float:left;    
 }
+.overview .clear:disabled{
+    background-color:lightgray; 
+    cursor:default;
+}
 
 .overview .clear:hover{
     font-size: 40px;
