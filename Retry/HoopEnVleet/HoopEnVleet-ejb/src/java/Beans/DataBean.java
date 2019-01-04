@@ -58,21 +58,15 @@ public List getShowNames(){
         klant.setPaswoord(paswoord);
         em.persist(klant);
     }
-/*       
-    public boolean getKlant(int klantnr)
+ 
+@Override
+    public boolean getKlant(String email)
     {
-        BigDecimal knr = new BigDecimal(klantnr);
-        List<Klanten> klantentries = em.createNamedQuery("Klanten.findByKnr").setParameter("knr",knr).getResultList();
-        if (klantentries.size() > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+       
+        List result = em.createNamedQuery("Klanten.findByEmail").setParameter("email",email).getResultList();
+        return result.isEmpty();
     }
-    */
+    
 @Override
     public BigDecimal addReservatie(String email, BigDecimal pid, int sid)
     {
