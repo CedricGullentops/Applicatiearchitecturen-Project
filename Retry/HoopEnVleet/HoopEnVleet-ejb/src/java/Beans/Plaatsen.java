@@ -40,6 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Plaatsen.findByKolom", query = "SELECT p FROM Plaatsen p WHERE p.kolom = :kolom")
     , @NamedQuery(name = "Plaatsen.removePlaats", query = "Update Plaatsen p SET p.vrij = '0' WHERE p.plaatsid = :plaatsid")
     , @NamedQuery(name = "Plaatsen.freePlaats", query = "Update Plaatsen p SET p.vrij = '1' WHERE p.plaatsid = :plaatsid")
+    , @NamedQuery(name = "Plaatsen.getPrijs", query = "Select p.prijs FROM Plaatsen p WHERE p.showid = :showid order by p.plaatsid")
     ,@NamedQuery(name = "Plaatsen.findFreeByShowid", query = "SELECT p.plaatsid FROM Plaatsen p WHERE p.showid = :showid AND p.vrij = '1' order by p.plaatsid" )})
 public class Plaatsen implements Serializable {
 

@@ -33,9 +33,16 @@ public class Servlet extends HttpServlet {
     public void init() throws ServletException {
         List S = db.getShowNames();
         getServletContext().setAttribute("Shownames",S); 
-        S = db.getShowDates();
+        List D = db.getShowDates();
+        getServletContext().setAttribute("Showdates",D);         
         rcodes = new ArrayList<>();
-       
+        boolean[] Fullshows = new boolean[S.size()];
+        for(int i = 0;i<Fullshows.length;i++){
+            Fullshows[i] = db.testShowFull((String)S.get(i));
+        }
+        getServletContext().setAttribute("Fullshows",Fullshows); 
+        List P = db.getPrijs((String)S.get(0));
+        getServletContext().setAttribute("prijzen",P); 
     }    
     @Override
     protected void doGet (HttpServletRequest request, HttpServletResponse response)
@@ -74,7 +81,7 @@ public class Servlet extends HttpServlet {
                 break;
         }
     }        
-       
+    
         @Override
     protected void doPost (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

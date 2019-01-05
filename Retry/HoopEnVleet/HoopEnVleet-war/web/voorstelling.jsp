@@ -18,17 +18,20 @@
         <script>
             function printOrder() 
             {
+                var prijzen = document.getElementsByName("prijs");
+                var totprijs =0;
                 var text="";
                 var aant=0;
                 var plaatsen= document.getElementsByName("plaatsid");
                 for (var i =0; i < plaatsen.length; i++){
                     if(plaatsen[i].checked){
                         aant++;
-                        text += "Plaats nr. : " + plaatsen[i].value + "<br>";                          
+                        text += "Plaats nr.: " + plaatsen[i].value + " prijs: " + Number(prijzen[plaatsen[i].value%1000].value) + "<br>";         
+                        totprijs += Number(prijzen[plaatsen[i].value%1000].value);
                     }                          
                 }                    
                 document.getElementById("lijst").innerHTML = text;
-                var prijs = "Totaalprijs: " + aant * 15 + " Euro" ;    
+                var prijs = "Totaalprijs: " + totprijs + " Euro" ;    
                 document.getElementById("tot").innerHTML = prijs;
                 if( aant === 0)
                 {
@@ -60,6 +63,7 @@
         <form action="<c:url value='Servlet.do'/>" method="post">
         <div  id="plaatsen" class="plaatsdiv" unselectable="on" onselectstart="return false" onmousedown="return false">            
             <table>
+                <c:forEach var="p" items="${prijzen}" > <input type="hidden" name="prijs" value="${p}"></c:forEach>               
                 <tr style="left:0"> 
                     <th></th>
                     <%
@@ -75,6 +79,7 @@
                     <tr> 
                         <th><% out.println(i); %></th>
                         <% for(int j = 1; j <=15 ; j+=1) { 
+                                    if(n==1){break;}
                                     if(n == ((BigDecimal)P.get(k)).intValueExact() - showid*1000 && k >= 0 ){
                         %>
                         <td class="tel">
@@ -86,15 +91,22 @@
                         <%}
                                 else{
                         %>
-                          <td class="tel">
+                        <td class="tel">
                             <label class="container">
                                 <span class="occupied"></span>
                             </label>
                         </td>
-                        <%}n--; } %>
-                     </tr>
+                        <%}n--; }
+                    if(n==1){%>
+                        <td class="tel">
+                            <label class="container">
+                                <span class="occupied"></span>
+                            </label>
+                        </td><%}%> 
+                    </tr>
                 <% } %>
           </table>
+          
         </div>
            <div  class="overview" >
             <h1>Overzicht</h1>            

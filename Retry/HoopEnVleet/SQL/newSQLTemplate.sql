@@ -8,4 +8,4 @@
  * Created: 31-Dec-201
 
 **/ 
-select * from plaatsen where showid =1;
+update plaatsen set prijs = 20 where rij = 4;

@@ -52,6 +52,14 @@ body{
         color: whitesmoke;
         cursor: pointer;
 }
+.showtabelfull{
+    background-color:lightgray;
+    border-radius: 5px;
+    height: 40px;
+    font-family:Georgia, serif; 
+    font-size: 20px;
+    font-weight: bold;
+}
 .im{
         height:150px;
         width: 150px;

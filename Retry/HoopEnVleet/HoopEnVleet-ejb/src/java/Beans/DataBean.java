@@ -22,7 +22,14 @@ public class DataBean implements DataBeanLocal {
 
 @PersistenceContext private EntityManager em;
 
-
+public List getPrijs(String n){
+    Query query = em.createNamedQuery("Shows.findByNaam");
+    query.setParameter("naam", n);
+    Shows S = (Shows) query.getSingleResult();
+    query = em.createNamedQuery("Plaatsen.getPrijs");
+    query.setParameter("showid", (Shows) S);
+    return query.getResultList(); 
+}
 @Override
 public List getShowNames(){
         return em.createNamedQuery("Shows.findNames").getResultList();       
@@ -30,6 +37,15 @@ public List getShowNames(){
     @Override
     public List getShowDates() {
         return em.createNamedQuery("Shows.findDates").getResultList();
+    }
+@Override
+    public boolean testShowFull(String n) {
+        Query query = em.createNamedQuery("Shows.findByNaam");
+        query.setParameter("naam", n);
+        Shows S = (Shows) query.getSingleResult();
+        query = em.createNamedQuery("Plaatsen.findFreeByShowid");
+        query.setParameter("showid", (Shows) S);
+        return query.getResultList().isEmpty(); 
     }
 @Override
     public List getOpenSeats(int id){        

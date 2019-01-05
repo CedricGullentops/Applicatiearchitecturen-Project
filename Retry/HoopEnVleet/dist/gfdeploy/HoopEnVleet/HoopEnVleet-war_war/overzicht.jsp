@@ -61,11 +61,12 @@
              <script>
             function calcPrijs ()
             {
+                var prijzen = document.getElementsByName("prijs");        
                 var lijst = document.getElementsByName("besteld");
                 var prijs = 0;
                 for(i=0;i<lijst.length;i++)
                 {
-                    prijs += 15;
+                    prijs += Number(prijzen[lijst[i].value%1000].value);
                 }       
                 document.getElementById("totprijs").innerHTML = "Subtotaal: " + prijs;
             }
@@ -75,7 +76,16 @@
     <body onload="writeStart()">      
         <h1 >Winkelmandje</h1>
         <div class="overdiv">       
-           <form action="<c:url value='Servlet.do'/>" method="post">    
+            <% 
+                ServletContext sc = request.getServletContext();
+                List prijzen = (List)sc.getAttribute("prijzen");
+                String[] ids = (String[])request.getAttribute("plaatsen");
+                out.print(Integer.parseInt(ids[0]));
+                int n = 0;
+            
+            %>
+            <form action="<c:url value='Servlet.do'/>" method="post">    
+            <c:forEach var="p" items="${prijzen}" > <input type="hidden" name="prijs" value="${p}"></c:forEach>       
             <table class="overtab">
                 <tr>
                     <th>Voorstelling</th>
@@ -87,7 +97,7 @@
                     <td>${voorstelling}</td>    
                     <td>${plaats}  </td>
                     <input type="hidden"  name="plaatsen" value="${plaats}">
-                    <td>15 Euro </td>
+                    <td><%out.print(prijzen.get(Integer.parseInt(ids[n])%1000)); n++;%> </td>
                     <td><label class="trash"  onclick="remPlaats('${plaats}')"  onmousedown="return false"></label>
                 </tr>
             </c:forEach>

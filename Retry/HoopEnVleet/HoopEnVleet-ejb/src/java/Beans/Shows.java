@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlTransient;
     ,@NamedQuery(name = "Shows.findNames", query = "SELECT s.naam FROM Shows s order by s.showid")
     ,@NamedQuery(name = "Shows.findIds", query = "SELECT s.showid FROM Shows s")
     ,@NamedQuery(name = "Shows.findIdByNaam", query = "SELECT s.showid FROM Shows s WHERE s.naam = :naam")
-    ,@NamedQuery(name = "Shows.findDates", query = "SELECT s.dag FROM Shows s")})
+    ,@NamedQuery(name = "Shows.findDates", query = "SELECT s.dag FROM Shows s order by s.showid")})
 public class Shows implements Serializable {
 
     @OneToMany(mappedBy = "showid")

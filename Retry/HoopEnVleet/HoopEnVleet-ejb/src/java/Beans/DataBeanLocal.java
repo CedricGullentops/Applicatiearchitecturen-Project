@@ -29,5 +29,9 @@ public interface DataBeanLocal {
     public void addKlant(String email, String naam, String pwd);
 
     public boolean getKlant(String email);
+
+    public boolean testShowFull(String string);
+
+    public List getPrijs(String string);
     
 }
