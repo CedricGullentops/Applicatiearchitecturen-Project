@@ -8,14 +8,12 @@ package Beans;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -35,9 +33,6 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Klanten.findByNaam", query = "SELECT k FROM Klanten k WHERE k.naam = :naam")
     , @NamedQuery(name = "Klanten.findByPaswoord", query = "SELECT k FROM Klanten k WHERE k.paswoord = :paswoord")})
 public class Klanten implements Serializable {
-
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "klanten")
-    private Groepen groepen;
 
     private static final long serialVersionUID = 1L;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
@@ -119,14 +114,6 @@ public class Klanten implements Serializable {
     @Override
     public String toString() {
         return "Beans.Klanten[ email=" + email + " ]";
-    }
-
-    public Groepen getGroepen() {
-        return groepen;
-    }
-
-    public void setGroepen(Groepen groepen) {
-        this.groepen = groepen;
     }
     
 }
