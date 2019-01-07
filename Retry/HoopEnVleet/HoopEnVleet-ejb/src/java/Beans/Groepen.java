@@ -6,38 +6,31 @@
 package Beans;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Jarrit
  */
 @Entity
-@Table(name = "KLANTEN")
+@Table(name = "GROEPEN")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Klanten.findAll", query = "SELECT k FROM Klanten k")
-    , @NamedQuery(name = "Klanten.findByEmail", query = "SELECT k FROM Klanten k WHERE k.email = :email")
-    , @NamedQuery(name = "Klanten.findByNaam", query = "SELECT k FROM Klanten k WHERE k.naam = :naam")
-    , @NamedQuery(name = "Klanten.findByPaswoord", query = "SELECT k FROM Klanten k WHERE k.paswoord = :paswoord")})
-public class Klanten implements Serializable {
-
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "klanten")
-    private Groepen groepen;
+    @NamedQuery(name = "Groepen.findAll", query = "SELECT g FROM Groepen g")
+    , @NamedQuery(name = "Groepen.findByEmail", query = "SELECT g FROM Groepen g WHERE g.email = :email")
+    , @NamedQuery(name = "Groepen.findByGroep", query = "SELECT g FROM Groepen g WHERE g.groep = :groep")})
+public class Groepen implements Serializable {
 
     private static final long serialVersionUID = 1L;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
@@ -48,18 +41,16 @@ public class Klanten implements Serializable {
     @Column(name = "EMAIL")
     private String email;
     @Size(max = 50)
-    @Column(name = "NAAM")
-    private String naam;
-    @Size(max = 20)
-    @Column(name = "PASWOORD")
-    private String paswoord;
-    @OneToMany(mappedBy = "email")
-    private Collection<Reservaties> reservatiesCollection;
+    @Column(name = "GROEP")
+    private String groep;
+    @JoinColumn(name = "EMAIL", referencedColumnName = "EMAIL", insertable = false, updatable = false)
+    @OneToOne(optional = false)
+    private Klanten klanten;
 
-    public Klanten() {
+    public Groepen() {
     }
 
-    public Klanten(String email) {
+    public Groepen(String email) {
         this.email = email;
     }
 
@@ -71,29 +62,20 @@ public class Klanten implements Serializable {
         this.email = email;
     }
 
-    public String getNaam() {
-        return naam;
+    public String getGroep() {
+        return groep;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public void setGroep(String groep) {
+        this.groep = groep;
     }
 
-    public String getPaswoord() {
-        return paswoord;
+    public Klanten getKlanten() {
+        return klanten;
     }
 
-    public void setPaswoord(String paswoord) {
-        this.paswoord = paswoord;
-    }
-
-    @XmlTransient
-    public Collection<Reservaties> getReservatiesCollection() {
-        return reservatiesCollection;
-    }
-
-    public void setReservatiesCollection(Collection<Reservaties> reservatiesCollection) {
-        this.reservatiesCollection = reservatiesCollection;
+    public void setKlanten(Klanten klanten) {
+        this.klanten = klanten;
     }
 
     @Override
@@ -106,10 +88,10 @@ public class Klanten implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Klanten)) {
+        if (!(object instanceof Groepen)) {
             return false;
         }
-        Klanten other = (Klanten) object;
+        Groepen other = (Groepen) object;
         if ((this.email == null && other.email != null) || (this.email != null && !this.email.equals(other.email))) {
             return false;
         }
@@ -118,15 +100,7 @@ public class Klanten implements Serializable {
 
     @Override
     public String toString() {
-        return "Beans.Klanten[ email=" + email + " ]";
-    }
-
-    public Groepen getGroepen() {
-        return groepen;
-    }
-
-    public void setGroepen(Groepen groepen) {
-        this.groepen = groepen;
+        return "Beans.Groepen[ email=" + email + " ]";
     }
     
 }
