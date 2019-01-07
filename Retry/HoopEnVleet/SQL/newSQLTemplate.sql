@@ -8,10 +8,7 @@
  * Created: 31-Dec-201
 
 **/ 
-insert into Klanten values ('cedricgullentops@hotmail.com', 'Cédric Gullentops', 'admin');
-insert into Klanten values ('jarritboons@gmail.be', 'Jarrit Boons', 'admin');
-insert into Klanten values ('janjannsens@gmail.be', 'Jan Jannsens','test');
-
-insert into Groepen values ('cedricgullentops@hotmail.com', 'Beheerders' );
-insert into Groepen values ('jarritboons@gmail.be', 'Beheerders' );
-insert into Groepen values ('janjannsens@gmail.be', 'Klanten' );
+update plaatsen set prijs = 20 where rij = 1;
+update plaatsen set prijs = 20 where rij = 2;
+update plaatsen set prijs = 20 where rij = 3;
+update plaatsen set prijs = 20 where rij = 4;
