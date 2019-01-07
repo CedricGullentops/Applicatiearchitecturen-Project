@@ -9,7 +9,6 @@
  */
 
 drop table Reservaties purge;
-drop table Groepen purge;
 drop table Plaatsen purge;
 drop table Klanten purge;
 drop table Shows purge;
@@ -19,10 +18,6 @@ create table Klanten(
     naam         varchar2(50),
     paswoord  varchar2(20)
 );
-
-create table Groepen (
-    email varchar2(50) references Klanten primary key,
-groep varchar2(50) );
 
 create table Shows(
     showid      integer primary key,
@@ -46,11 +41,3 @@ create table Reservaties(
     plaatsid    integer references Plaatsen,
     showid      integer references Shows
 );
-
-insert into Klanten values ('cedricgullentops@hotmail.com', 'Cédric Gullentops', 'admin');
-insert into Klanten values ('jarritboons@gmail.be', 'Jarrit Boons', 'admin');
-insert into Klanten values ('janjannsens@gmail.be', 'Jan Jannsens','test');
-
-insert into Groepen values ('cedricgullentops@hotmail.com', 'Beheerders' );
-insert into Groepen values ('jarritboons@gmail.be', 'Beheerders' );
-insert into Groepen values ('janjannsens@gmail.be', 'Klanten' );

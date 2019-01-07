@@ -39,7 +39,6 @@
                                                                   <p>
                                                                                         <input class="register"  type="submit" value="Registreer"/> 
                                                                                         <input type="hidden" name="naar" value="verkoop">
-                                                                                        <input type="hidden" name="van" value="van">
 			</p>
 		</form>
 	</div>

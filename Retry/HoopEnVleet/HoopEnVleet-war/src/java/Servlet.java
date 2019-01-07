@@ -113,9 +113,8 @@ public class Servlet extends HttpServlet {
                 String email = request.getParameter("email");
                 String naam = request.getParameter("naam");
                 String pwd = request.getParameter("password");
-                //request.login(request.getParameter("email"), request.getParameter("password"));
                 email = email.toLowerCase();
-                if(db.getKlant(email) || request.getParameter("van") != null){
+                if(db.getKlant(email)){
                     db.addKlant(email,naam,pwd);
                     gotoPage("verkoop.jsp",request,response);
                 } 
